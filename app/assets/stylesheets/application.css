@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+.header {
+	float: left;
+	width: 100%;
+	background: url("header.png") repeat-x top center;
+}
+
+.logo {
+	margin-left: 20px;
+    width: 150px;
+}
+
+.to-the-right {
+	float: right;
+}
+
+.to-the-left {
+	float: left;
+}
+
+/* Header seperator line */
+#separator {
+position: relative;
+width: 1024px;
+height: 14px;
+margin-top: -70px;
+margin-left: auto;
+margin-right: auto;
+background: url("separator.png") no-repeat;
+}
+
+/* Override bootstraps white background with baby blue bootstrap.css #166 */
+body {
+	background-color: #ADE9F4;
+}
+
+/* The clear property specifies which sides of an element where other floating elements are not allowed. */
+.clear {
+	clear: both;
+}
+
+/* Registration and Login Form */
+.content {
+	width:500px;
+	margin:0px auto;
+	text-align:left;
+	padding:15px;
+}

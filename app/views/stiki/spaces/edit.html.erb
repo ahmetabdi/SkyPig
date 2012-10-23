@@ -1,0 +1,39 @@
+<div class="stiki row-fluid">
+  <div class="span12">
+    <div class="row-fluid well">
+      <h2>Edit <%= @space.name %></h2>
+    </div>
+          
+    <div class="row-fluid well">
+      <%= form_tag( stiki_routes.space_path(@space), :class => 'form-horizontal', :method => :put) do |f| %>
+         <fieldset>
+    
+          <%- if @space.errors %>
+            <div class="control-group error">
+              <%- @space.errors.full_messages.each do |error| %>
+                <div class="error help-block">
+                  <%= error %>
+                </div>
+              <% end -%>
+            </div>
+          <% end -%>
+          
+          <div class="control-group">
+              <%= label_tag 'name', 'Name', :class => "control-label" %>
+              <div class="controls">
+                <input class="field input-xlarge span11" id="name" name="space[name]"  value="<%= @space.name %>" size="30" type="text">
+              </div>
+          </div>
+          <div class="form-actions">
+            <div class="span4">
+              <%= submit_tag "Save", :class => "btn btn-primary btn-large" %>
+            </div>
+            <div class="span2">
+                <%= link_to 'Cancel', stiki_routes.spaces_path(), :class => 'btn' %>
+            </div>
+          </div>
+        </fieldset>
+      <% end -%>
+    </div>
+  </div>
+</div>

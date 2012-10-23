@@ -1,0 +1,27 @@
+
+@import "authors";
+@import "pages";
+@import "spaces";
+
+.stiki {
+  .breadcrumb {
+    
+    margin-bottom: 0;
+    
+    .btn-group {
+      li {
+        display: block; 
+      }
+    }
+  }
+  
+  
+  .title {
+    a {
+      .icon-chevron-left {
+        position: relative;
+        top: 9px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="hero-unit content box raised">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<div class="form-horizontal">
+  <div class="control-group">
+    <%= f.label :email, :class => "control-label" %>
+    <div class="controls">
+     	<div class="input-prepend">
+      		<span class="add-on"><i class="icon-envelope"></i></span>
+      		<%= f.email_field :email, :placeholder => "Email" %>
+    	</div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => "control-label" %>
+    <div class="controls">
+    	<div class="input-prepend">
+      		<span class="add-on"><i class="icon-lock"></i></span>
+      		<%= f.password_field :password, :placeholder => "Password" %>
+      	</div>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    	<%= f.submit "Sign in", :class => "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+</div>

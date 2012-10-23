@@ -1,0 +1,53 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.stiki {
+  .page {
+    .breadcrumb {
+      .divider {
+        font-size: 32px; 
+      }
+    }
+    
+    .wiki-cheatsheet {
+      margin: 20px 0;
+      
+      h4 {
+        margin-left: 18px; 
+      }
+    }
+    
+    .page-list {
+      cursor:pointer;
+      
+      li {
+        padding: 2px;      
+      
+        a {
+          float: left; 
+          font-size: 18px;
+        }
+      }
+    }
+    
+    .list:hover {
+      color: green;
+    }
+    
+    .author {
+      
+      .badge {
+        margin-left: 3px; 
+      }
+    }
+    
+    .delete {
+      form {
+        margin: 0; 
+      }
+    }
+  }
+  
+}

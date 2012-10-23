@@ -1,0 +1,67 @@
+<div class="header">
+
+	<% if signed_in? %>
+	<div class="navbar to-the-right">
+		<div class="navbar-inner">
+			<ul class="nav">
+				<li>
+					<div class="btn-group">
+  						<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i><%= current_user.username %></a>
+  						<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+  						<ul class="dropdown-menu">
+    						<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+    						<li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+    						<li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
+    						<li class="divider"></li>
+    						<li><%= link_to "Logout", '/logout' %></li>
+  						</ul>
+					</div>
+				</li>
+  			</ul>
+  		</div>
+	</div>
+	<% else %>
+	<div class="navbar to-the-right">
+		<div class="navbar-inner">
+			<ul class="nav">
+				<li><%= link_to "Register", '/register' %></li>
+  				<li class="divider-vertical"></li>
+  				<li><%= link_to "Login", '/login' %></li>
+  			</ul>
+  		</div>
+	</div>
+	<% end %>
+
+	<% sky_pig_logo = image_tag("pigs/skypigtxt.png", :class => "logo") %>
+	<%= link_to sky_pig_logo, root_path %>
+
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+					<li class="active"><%= link_to 'Home', root_path %></li>
+					<li class="dropdown">
+                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Browse <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                        <li><a tabindex="-1" href="http://google.com">Games</a></li>
+                        <li><a tabindex="-1" href="#">Characters</a></li>
+                        <li><a tabindex="-1" href="#">Objects</a></li>
+                        <li><a tabindex="-1" href="#">Locations</a></li>
+                        <li><a tabindex="-1" href="#">Franchises</a></li>
+                        <li><a tabindex="-1" href="#">Companies</a></li>
+                        <!-- <li class="divider"></li> -->
+                        <!-- <li><a tabindex="-1" href="#">Separated link</a></li> -->
+                      </ul>
+                    </li>
+					<li><a href="#">Reviews</a></li>
+					<li><%= link_to 'Users', 'users' %></li>
+				</ul>
+					<form class="navbar-form to-the-right">
+  						<input type="text" class="span2" placeholder="Search">
+					</form>
+			</div>
+		</div>
+	</div>
+
+</div>
+
