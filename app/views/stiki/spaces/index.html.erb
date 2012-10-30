@@ -1,7 +1,7 @@
 <div align="center" class='stiki'>
     <%- @spaces.each do |space| %>
       <div class="row-fluid">
-        <div class="span8 well space">
+        <div class="well space">
           <div class="action">
             <%- if has_access( :update, @page ) %>
               <%= link_to '<i class="icon-pencil"></i>'.html_safe, stiki_routes.edit_space_path( space ), :class => 'update close' %>
@@ -22,12 +22,12 @@
     <% end -%>
     <%- if has_access( :create, Stiki::Space ) %>
       <div class="row-fluid create-space">
-        <div class="span8 well">
+        <div class="well">
           <a href="#" class="btn btn-success btn-large create-space-trigger">Create New Space</a>
         </div>
       </div>
       <div class="row-fluid create-space" style="display:none">
-        <div class="span8">
+        <div>
           <div class="row-fluid">
             <%= form_tag( stiki_routes.spaces_path, :class => 'form-horizontal' ) do |f| %>
               <fieldset class="well">
