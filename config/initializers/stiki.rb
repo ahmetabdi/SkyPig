@@ -7,8 +7,8 @@ Stiki.config do |stiki|
 
   # Optional, use devise for authentication
   stiki.authenticate_by = :devise 
-  stiki.authenticate_pages = :all   # other options are :only => [actions]  or :except => [actions]
-  stiki.authenticate_spaces = :all  # other options are :only => [actions] or :except => [actions]
+  stiki.authenticate_pages = {:only => [:new, :update]}  # other options are :only => [actions]  or :except => [actions]
+  stiki.authenticate_spaces = {:only => [:new, :update]}  # other options are :only => [actions] or :except => [actions]
 
   # Optional, use cancan for authorization
   #stiki.authorize_by = :cancan

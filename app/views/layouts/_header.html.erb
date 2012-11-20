@@ -59,9 +59,9 @@
 					<li><a href="#">Reviews</a></li>
 					<li><%= link_to 'Users', 'users' %></li>
 				</ul>
-					<form class="navbar-form to-the-right">
-  						<input type="text" class="span2" placeholder="Search">
-					</form>
+					<%= form_tag results_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
+    					<%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => 'Search' %>
+					<% end %>
 			</div>
 		</div>
 	</div>

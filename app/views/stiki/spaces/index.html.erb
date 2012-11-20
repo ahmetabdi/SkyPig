@@ -13,10 +13,10 @@
           </div>
           <div style="title">
             <h2 ><%= link_to space.name, stiki_routes.space_pages_path(space) %></h2>
-            <% if space.creator %>
+            <!-- REMOVED <% if space.creator %>
               <h4 >Created by <%= user_name( space.creator ) %></h4>
             <% end %>
-          </div>
+          </div> -->
         </div>
       </div>
     <% end -%>

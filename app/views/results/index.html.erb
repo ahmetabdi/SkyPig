@@ -1,0 +1,8 @@
+<% @results.each do |result| %>
+	<b><h1><%= result.name %></h1></b>
+	<%= image_tag(result.image["thumb_url"], :class => 'img-polaroid') %> <br/><br/>
+	<%= result.deck %> <br/> <br/>
+	<button class="btn btn-info" type="button">Read More</button>
+<% end %>
+
+<%= will_paginate @results, :renderer => BootstrapPagination::Rails %>

@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'giantbomb'
 gem 'stiki'
 gem 'devise'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 
 # Gems used only for assets and not required

@@ -11,6 +11,8 @@ SkyPig::Application.routes.draw do
 
   match 'users' => "users#index"
 
+  match 'results' => "results#index"
+
   root :to => 'home#index'
   mount Stiki::Engine => "/wiki"
   
