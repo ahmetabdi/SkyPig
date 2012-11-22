@@ -1,3 +1,4 @@
+ <%= tinymce_assets %>
  <fieldset>
     
     <%- if page.errors %>
@@ -17,9 +18,13 @@
         </div>
         <%= label_tag 'body', 'Body', :class => "control-label" %>
         <div class="controls">
-          <textarea class="field input-xlarge span11" id="body" name="page[body]" rows="20"><%= page.body %></textarea>
+          <textarea class="field input-xlarge span11 tinymce" id="body" name="page[body]" rows="20"><%= page.body %></textarea>
         </div>
     </div>
+
+
+    <%= tinymce %>
+
     <div class="form-actions">
       <div class="span4">
         <%= submit_tag "Save", :class => "btn btn-primary btn-large" %>
