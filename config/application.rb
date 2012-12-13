@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'GiantBomb'
+require 'giantbomb'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line

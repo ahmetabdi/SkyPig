@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-	require 'GiantBomb'
+	require 'giantbomb'
 	require 'will_paginate/array'
 
 	def index
