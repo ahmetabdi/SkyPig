@@ -51,6 +51,8 @@
         <div class="row-fluid">
           <div class="span12 well"><%= @markup %></div>
         </div>
+
+        <% if user_signed_in? %>
         <div class="row-fluid">
           <div class="span12 well">
             <%- if has_access( :update, @page ) %>
@@ -66,25 +68,10 @@
             <% end -%>
           </div>
         </div>
+        <% end %>
+
       </div>
-      <div class="span3">
-        <div class="row-fluid">
-          <div class="span12 well">
-            <div>
-              <ul class="nav nav-list author">
-                <li class="nav-header">Contributors</li>
-                <%- @page.authors.each do |author| %>
-                  <li>
-                    <%= user_name( author ) %> 
-                    <%= "<span class='badge badge-success' title='Author'>A</span>".html_safe if author.creator %>
-                    <%= "<span class='badge badge-info' title='Last Edit'>L</span>".html_safe if author.last_edit %></li>
-                  </li>
-                <% end -%>
-              </ul>
-            </div>  
-          <div>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>

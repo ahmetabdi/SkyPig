@@ -30,6 +30,9 @@
                   <%- @spaces.each do |space| %>
                     <li><a href="<%= stiki_routes.space_pages_path(space) %>"><%= space.name %></a></li>
                   <% end -%>
+                  <% if @spaces.empty? %>
+                  test
+                  <% end %>
                 </ul>
               </div>
             </li>      
@@ -47,7 +50,7 @@
             <li>
               <%= link_to page.title, stiki_routes.space_page_path(@space, page), :class => "span11" %>
                 
-              <%- if has_access( :delete, @page ) %>
+              <%- if has_access( :delete, @page ) & user_signed_in? %>
                 <%= button_to "X", stiki_routes.space_page_path( @space, page ), :method => :delete, 
                    :class => 'close', :confirm => 'Are you sure you want to delete this Wiki Page?' %>
               <% end -%>
@@ -58,7 +61,7 @@
         </ul>
       </div>
     </div>
-    <%- if has_access( :create, Stiki::Page ) %>
+    <%- if has_access( :create, Stiki::Page ) & user_signed_in? %>
       <div class="row-fluid">
         <div class="well">
             <%= link_to 'Create Page', stiki_routes.new_space_page_path(@space), :class => 'btn-large btn btn-success' %>  

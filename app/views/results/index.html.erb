@@ -1,8 +1,58 @@
-<% @results.each do |result| %>
-	<b><h1><%= result.name %></h1></b>
-	<%= image_tag(result.image["thumb_url"], :class => 'img-polaroid') %> <br/><br/>
-	<%= result.deck %> <br/> <br/>
-	<button class="btn btn-info" type="button">Read More</button>
-<% end %>
+<style type="text/css">
+.thumbnail {
+	border: 0px;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+.container{
+	width: auto;
+}
+.item{
+	background-color:whiteSmoke;
+	width: 320px;
+	height: 380px;
+	margin: 5px;
+	float: left;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
 
+	$('.row-fluid').isotope({
+  		// options
+  		itemSelector : '.item',
+  		layoutMode : 'fitRows'
+	});
+
+});
+</script>
+
+<div class="row-fluid">
+	<ul class="thumbnails">	
+		<% @results.each do |result| %>
+			<li class="item box raised">
+				<div class="thumbnail">
+					<% if result.image.nil? || result.image.empty? %>
+						<%= image_tag("placeholder.jpg", :class => 'img-polaroid', :size => "150x150") %>
+					<% else %>
+						<%= image_tag(result.image["thumb_url"], :class => 'img-polaroid') %>
+					<% end %>
+                    <h3><%= result.name %></h3>
+                    <p><%= truncate(result.deck, :length => 100) %></p>
+                    
+                    <%= form_tag game_path, :method => 'get' do %>
+        			<p>
+            		<%= hidden_field_tag(:game, result.name) %>
+           			<%= submit_tag 'Read More', :name => nil, :class => "btn btn-info" %>
+        			</p>
+    				<% end %>
+
+				</div>
+			</li>
+		<% end %>
+	</ul>	
+</div>
+
+	
+
+<%= @results %>
 <%= will_paginate @results, :renderer => BootstrapPagination::Rails %>

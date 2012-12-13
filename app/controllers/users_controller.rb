@@ -5,17 +5,13 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  #Anyone can create a new user
-  #TODO Need to add authentication for other users
   def new
      @title = "Create a user"
      @user = User.new
   end
-    
-  #Showing the custom user page (Dashboard?)
-  #Everyones homepage but will have filtered content to user account
+
   def show
-    @title = "Information for #{@user.full_name}"
+    #@title = "Information for #{@user.full_name}"
     @user = User.find(params[:id])
     @users = User.all
   end

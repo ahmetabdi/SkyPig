@@ -1,6 +1,7 @@
 SkyPig::Application.routes.draw do
 
   devise_for :users
+  resources :users
 
   devise_for :users, :controllers => {:sessions => 'devise/sessions', :registrations => 'devise/registrations', :passwords => 'devise/passwords'}, :skip => [:sessions] do
     get '/login' => 'devise/sessions#new', :as => :new_user_session
@@ -12,8 +13,10 @@ SkyPig::Application.routes.draw do
   match 'users' => "users#index"
 
   match 'results' => "results#index"
+  match 'game' => "results#show"
 
-  root :to => 'home#index'
+  #root :to => 'home#index'
+  root :to => 'stiki/spaces#index'
   mount Stiki::Engine => "/wiki"
   
   # The priority is based upon order of creation:

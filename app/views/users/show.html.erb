@@ -1,0 +1,28 @@
+<%= form_for(@user) do |f| %>
+	<div class="hero-unit">
+		<h1>User Account</h1>
+		<!-- Username -->
+		<b>Username:</b><%= @user.username %><br />
+		<!-- Email -->
+		<b>Email:</b><%= @user.email %><br />
+		<!-- Sign in count -->
+		<b>Sign in count:</b><%= @user.sign_in_count %><br />
+		<!-- User creation date -->
+		<% if @user.created_at.nil? %><% else%>
+		<b>Created on:</b><%= @user.created_at.strftime("%B %d, %Y at %I:%M%p") %>
+		<% end %><br />
+		<!-- Last signed in at -->
+		<b>Last seen:</b>
+		<% if @user.last_sign_in_at.nil? %>Never
+		<% else %><%= @user.last_sign_in_at.strftime("%B %d, %Y at %I:%M%p") %><% end %><br /><br /><br /><br />
+		<p>
+    		<a class="btn btn-primary btn-large">
+				Edit Information
+			</a>
+		</p>
+	</div>
+
+	
+
+
+<% end %>

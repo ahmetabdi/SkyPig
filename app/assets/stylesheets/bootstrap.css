@@ -224,8 +224,10 @@ a:hover {
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 940px;
+  width: 100%;
 }
+/* CHANGED TO 100% from 940px */
+
 
 .span12 {
   width: 940px;
@@ -550,6 +552,7 @@ a:hover {
   margin-left: auto;
   *zoom: 1;
 }
+/* CHANGED auto to 5px */
 
 .container:before,
 .container:after {

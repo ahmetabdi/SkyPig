@@ -6,7 +6,7 @@
 			<ul class="nav">
 				<li>
 					<div class="btn-group">
-  						<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i><%= current_user.username %></a>
+  						<a class="btn btn-primary" href="<%= user_path(current_user)%>"><i class="icon-user icon-white"></i><%= current_user.username %></a>
   						<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
   						<ul class="dropdown-menu">
     						<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
@@ -57,7 +57,7 @@
                       </ul>
                     </li>
 					<li><a href="#">Reviews</a></li>
-					<li><%= link_to 'Users', 'users' %></li>
+					<li><%= link_to 'Users', users_path %></li>
 				</ul>
 					<%= form_tag results_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
     					<%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => 'Search' %>
