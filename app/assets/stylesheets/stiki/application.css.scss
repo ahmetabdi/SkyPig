@@ -1,5 +1,3 @@
-
-@import "authors";
 @import "pages";
 @import "spaces";
 
@@ -24,4 +22,75 @@
       }
     }
   }
+}
+
+.stiki {
+  .page {
+    .breadcrumb {
+      .divider {
+        font-size: 32px; 
+      }
+    }
+    
+    .wiki-cheatsheet {
+      margin: 20px 0;
+      
+      h4 {
+        margin-left: 18px; 
+      }
+    }
+    
+    .page-list {
+      cursor:pointer;
+      
+      li {
+        padding: 2px;      
+      
+        a {
+          float: left; 
+          font-size: 18px;
+        }
+      }
+    }
+    
+    .list:hover {
+      color: green;
+    }
+    
+    .author {
+      
+      .badge {
+        margin-left: 3px; 
+      }
+    }
+    
+    .delete {
+      form {
+        margin: 0; 
+      }
+    }
+  }
+  
+}
+
+.stiki {
+    .space {
+        .action {
+          float: right; 
+        }
+        .update {
+          margin-right: 5px; 
+        }
+        
+        .delete {
+          border: 0;
+          background-color: white;
+        }
+      
+      
+      
+      .title {
+        float: left;
+      }
+    }
 }
