@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>SkyPig</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-
-
-<body>
-
-<%= render 'layouts/header' %>
-
-<div class="container">
-	<%= render 'layouts/errors'%>
-	<%= yield %>
-
-	<%= debug(params) if Rails.env.development? %>
-</div>
-
-
-
-</body>
+  <head>
+    <title>SkyPig</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+	  <%= render 'layouts/errors'%>
+	  <%= yield %>
+    </div>
+  </body>
 </html>

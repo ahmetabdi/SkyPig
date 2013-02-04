@@ -4,11 +4,10 @@
 			<div class="span12 well">
 				<h1><%= @game.name %></h1> <br />
 				<%= @game.deck %> <br />
-				<%= @game.date_last_updated %> <br />
-				<%= @game.expected_release_quarter %> <br />
-
 				<%= @game.description.html_safe %> <br />
 
+				<%= @game.date_last_updated %> <br />
+				<%= @game.expected_release_quarter %> <br />
 				<%= @game.aliases %> <br />
 				<%= @game.site_detail_url %> <br />
 				<%= @game.api_detail_url %> <br />

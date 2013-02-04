@@ -1,5 +1,22 @@
- <%= tinymce_assets %>
- <fieldset>
+<%= tinymce_assets %>
+
+<style>
+.form-tool {
+  padding-left: 80px;
+}
+.row-fluid .span4 {
+  width: 150px;
+}
+.form-horizontal .control-label {
+float: left;
+width: 60px;
+padding-top: 5px;
+text-align: right;
+}
+.form-horizontal .controls {
+margin-left: 80px;
+}
+</style>
     
     <%- if page.errors %>
       <div class="control-group error">
@@ -11,30 +28,30 @@
       </div>
     <% end -%>
     
-    <div class="control-group">
+    <div>
         <%= label_tag 'title', 'Title', :class => "control-label" %>
         <div class="controls">
-          <input class="field input-xlarge span11" id="title" name="page[title]"  value="<%= page.title %>" size="30" type="text">
+          <input id="title" name="page[title]"  value="<%= page.title %>" size="5" type="text">
         </div>
+        <br />
         <%= label_tag 'body', 'Body', :class => "control-label" %>
         <div class="controls">
-          <textarea class="field input-xlarge span11 tinymce" id="body" name="page[body]" rows="20"><%= page.body %></textarea>
+          <textarea class="field input-xlarge span11 tinymce" id="body" name="page[body]" rows="30"><%= page.body %></textarea>
         </div>
     </div>
 
-
     <%= tinymce %>
+    <br />
 
-    <div class="form-actions">
+    <div class="form-tool">
       <div class="span4">
         <%= submit_tag "Save", :class => "btn btn-primary btn-large" %>
       </div>
-      <div class="span2">
+      <div>
         <% if page.id %>
-          <%= link_to 'Cancel', stiki_routes.space_page_path(@space, page), :class => 'btn' %>
+          <%= link_to 'Cancel', stiki_routes.space_page_path(@space, page), :class => 'btn btn-primary btn-large' %>
         <% else %>
-          <%= link_to 'Cancel', stiki_routes.space_pages_path(@space), :class => 'btn' %>
+          <%= link_to 'Cancel', stiki_routes.space_pages_path(@space), :class => 'btn btn-primary btn-large' %>
         <% end %>
       </div>
     </div>
-  </fieldset>

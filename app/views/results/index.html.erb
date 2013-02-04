@@ -18,7 +18,6 @@
 $(document).ready(function() {
 
 	$('.row-fluid').isotope({
-  		// options
   		itemSelector : '.item',
   		layoutMode : 'fitRows'
 	});
@@ -52,7 +51,4 @@ $(document).ready(function() {
 	</ul>	
 </div>
 
-	
-
-<%= @results %>
 <%= will_paginate @results, :renderer => BootstrapPagination::Rails %>

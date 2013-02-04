@@ -8,6 +8,9 @@
     min-height: 30px; }
   .stiki .title a .icon-chevron-left {
     top: 0px;}
+  .pad_it {
+    padding-left: 20px;
+  }
 </style>
 
 <div class="stiki">
@@ -18,7 +21,7 @@
 
           <%= link_to '<i class="icon-chevron-left"></i>'.html_safe, stiki_routes.spaces_path(), :class => "btn btn-large btn", :style => "float:left" %>
 
-          <center><h1 style="float:left"><%= @space.name %> Pages</h1></center>
+          <h1 style="float:left" class="pad_it"><%= @space.name %> Pages</h1>
 
           <ul class="breadcrumb to-the-right">
             <li>

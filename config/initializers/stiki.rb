@@ -3,7 +3,7 @@ Stiki.config do |stiki|
   stiki.user_class = 'User' 
 
   # Method to be called on user_class to display user name. Defaults to to_s
-  #stiki.user_name_via = :username
+  stiki.user_name_via = :username
 
   # Optional, use devise for authentication
   stiki.authenticate_by = :devise 
