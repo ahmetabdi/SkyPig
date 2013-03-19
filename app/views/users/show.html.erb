@@ -1,28 +1,62 @@
 <%= form_for(@user) do |f| %>
 	<div class="hero-unit">
-		<h1>User Account</h1>
+		<h2>Account Information</h2>
 		<!-- Username -->
-		<b>Username:</b><%= @user.username %><br />
+		<b>Username:</b> <%= @user.username %><br />
 		<!-- Email -->
-		<b>Email:</b><%= @user.email %><br />
+		<b>Email:</b> <%= @user.email %><br />
 		<!-- Sign in count -->
-		<b>Sign in count:</b><%= @user.sign_in_count %><br />
+		<b>Sign in count:</b> <%= @user.sign_in_count %><br />
 		<!-- User creation date -->
 		<% if @user.created_at.nil? %><% else%>
-		<b>Created on:</b><%= @user.created_at.strftime("%B %d, %Y at %I:%M%p") %>
+		<b>Created on:</b> <%= @user.created_at.strftime("%B %d, %Y at %I:%M%p") %>
 		<% end %><br />
 		<!-- Last signed in at -->
 		<b>Last seen:</b>
 		<% if @user.last_sign_in_at.nil? %>Never
-		<% else %><%= @user.last_sign_in_at.strftime("%B %d, %Y at %I:%M%p") %><% end %><br /><br /><br /><br />
+		<% else %><%= @user.last_sign_in_at.strftime("%B %d, %Y at %I:%M%p") %><% end %><br />
 		<p>
     		<a class="btn btn-primary btn-large">
 				Edit Information
 			</a>
 		</p>
+
+		<h2>Your Active Wiki Pages</h2>
+		<% @pages = Stiki::Author.all %>
+
+		<table class="table table-bordered">
+			<tr> 
+				<td>Author</td>
+				<td>Active Users</td>
+				<td>Space</td>
+				<td>Page Title</td>
+				<td>Created On</td>
+				<td>Last Updated</td>
+			</tr>
+		<% @pages.each do |page| %>
+			<tr>
+			<% if page.user_id == current_user.id %>
+
+				<% @page = Stiki::Page.find(page.authorable_id) %>
+				
+				<% @page.authors.each do |author| %>
+					<td><%= "<span class='badge badge-success' title='Author'>A</span>".html_safe if author.creator %></td>
+				<% end %>
+				<td><%= @page.authors.count %></td>
+				<td><%= link_to @page.space.name, stiki_routes.space_pages_path(@page.space) %></td>
+				<td><%= link_to @page.title, stiki_routes.space_page_path(@page.space, @page) %></td>
+				<td><%= @page.created_at.strftime("%d/%m/%Y at %I:%M%p") %></td>
+				<td><%= @page.updated_at.strftime("%d/%m/%Y at %I:%M%p") %></td>
+
+			<% end %>
+			</tr>
+		<% end %>
+		</table>
+
+
+
+
+
 	</div>
-
-	
-
 
 <% end %>

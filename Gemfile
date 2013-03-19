@@ -18,6 +18,7 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'tinymce-rails'
 gem 'disqus'
+gem 'carrierwave'
 
 
 # Gems used only for assets and not required

@@ -52,6 +52,11 @@
             </ul>
           </div>
         </div>
+        <div class="row-fluid">
+          <div class="to-the-right" style="width: 252px; height: 29px;">
+            <%= facebook_like %>
+          </div>
+        </div>
     </div>
 
     <div class="row-fluid">
@@ -81,13 +86,24 @@
 
       <div class="span3">
         <div class="row-fluid">
+          <% if @page.image_url %>
+          <div class="span12 well">
+            <div>
+              <ul class="nav nav-list author">
+                <%= image_tag(@page.image_url, :size => "150x150", :class => 'img-polaroid') %>
+              </ul>
+            </div>
+          </div>
+          <% end %>
           <div class="span12 well">
             <div>
               <ul class="nav nav-list author">
                 <li class="nav-header">Contributors</li>
                 <%- @page.authors.each do |author| %>
                   <li>
-                    <%= user_name( author ) %> 
+                    <% @author_user = User.find(author.user_id) %>
+                    <%= @author_user.username %>
+
                     <%= "<span class='badge badge-success' title='Author'>A</span>".html_safe if author.creator %>
                     <%= "<span class='badge badge-info' title='Last Edit'>L</span>".html_safe if author.last_edit %></li>
                   </li>
@@ -98,10 +114,10 @@
         </div>
       </div>
 
-<div id ="disqus_thread"> 
-<%= disqus_thread %> 
-</div> 
-<script type="text/javascript" src="http://disqus.com/forums/rapexegesis/embed.js"></script> 
+      <div id ="disqus_thread"> 
+        <%= disqus_thread %> 
+      </div> 
+      <script type="text/javascript" src="http://disqus.com/forums/rapexegesis/embed.js"></script> 
     </div> 
   </div>
 </div>

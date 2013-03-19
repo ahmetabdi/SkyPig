@@ -15,6 +15,13 @@ SkyPig::Application.routes.draw do
   match 'results' => "results#index"
   match 'game' => "results#show"
 
+  
+  resources :authors, :controller => 'stiki::authors'
+  
+  resources :spaces, :controller => 'stiki::spaces' do
+    resources :pages, :controller => 'stiki::pages'    
+  end
+
   #root :to => 'home#index'
   root :to => 'stiki/spaces#index'
   mount Stiki::Engine => "/wiki"

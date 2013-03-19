@@ -1,7 +1,7 @@
 <div class="row-fluid">
   <div class="span12">
       <h2>Editing <%= @page.title %></h2>
-      <%= form_tag( stiki_routes.space_page_path(@space, @page), :class => 'form-horizontal', :method => :put) do |f| %>
+      <%= form_tag( stiki_routes.space_page_path(@space, @page), :class => 'form-horizontal', :method => :put, :multipart => true ) do |f| %>
         <%= render( :partial => 'stiki/pages/form', :locals => { :f => f, :page => @page } ) %>
       <% end -%>
   </div>

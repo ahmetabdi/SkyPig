@@ -38,6 +38,14 @@ margin-left: 80px;
         <div class="controls">
           <textarea class="field input-xlarge span11 tinymce" id="body" name="page[body]" rows="30"><%= page.body %></textarea>
         </div>
+        <br />
+
+        <div class="controls">
+          <label for="page_image">Upload an image to be used on the page for recognition.</label>
+          <input id="page_image" name="page[image]" type="file">
+        </div>
+
+       
     </div>
 
     <%= tinymce %>

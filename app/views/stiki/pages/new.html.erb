@@ -1,7 +1,7 @@
 <div class="row-fluid">
   <div class="span12">
       <h2>New Page in <%= @space.name %></h2>
-      <%= form_tag( stiki_routes.space_pages_path(@space), :class => 'form-horizontal' ) do |f| %>
+      <%= form_tag( stiki_routes.space_pages_path(@space), :class => 'form-horizontal', :multipart => true ) do |f| %>
         <%= render( :partial => 'stiki/pages/form', :locals => { :f => f, :page => @page  } ) %>
       <% end -%>
   </div>
