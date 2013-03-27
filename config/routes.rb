@@ -14,6 +14,9 @@ SkyPig::Application.routes.draw do
 
   match 'results' => "results#index"
   match 'game' => "results#show"
+  match 'search' => "stiki::pages#search"
+  match 'movie' => "movies#index"
+  match 'movie_results' => "movies#show"
 
   
   resources :authors, :controller => 'stiki::authors'

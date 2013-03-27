@@ -108,6 +108,10 @@
                     <%= "<span class='badge badge-info' title='Last Edit'>L</span>".html_safe if author.last_edit %></li>
                   </li>
                 <% end -%>
+                <li class="nav-header">Created on:</li>
+                <li><%= @page.created_at.strftime("%d/%m/%Y at %I:%M%p") %></li>
+                <li class="nav-header">Last Updated:</li>
+                <li><%= @page.updated_at.strftime("%d/%m/%Y at %I:%M%p") %></li>
               </ul>
             </div>  
           <div>

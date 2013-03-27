@@ -25,30 +25,33 @@ $(document).ready(function() {
 });
 </script>
 
-<div class="row-fluid">
-	<ul class="thumbnails">	
-		<% @results.each do |result| %>
-			<li class="item box raised">
-				<div class="thumbnail">
-					<% if result.image.nil? || result.image.empty? %>
-						<%= image_tag("placeholder.jpg", :class => 'img-polaroid', :size => "150x150") %>
-					<% else %>
-						<%= image_tag(result.image["thumb_url"], :class => 'img-polaroid') %>
-					<% end %>
-                    <h3><%= result.name %></h3>
-                    <p><%= truncate(result.deck, :length => 100) %></p>
-                    
-                    <%= form_tag game_path, :method => 'get' do %>
-        			<p>
-            		<%= hidden_field_tag(:game, result.name) %>
-           			<%= submit_tag 'Read More', :name => nil, :class => "btn btn-info" %>
-        			</p>
-    				<% end %>
+<table class="table table-bordered">
+<tr>
+	<td></td>
+	<td>Name</td>
+	<td>Description</td>
+	<td></td>
+</tr>
+<% @results.each do |result| %>
+<tr>
+	<% if result.image.nil? || result.image.empty? %>
+		<td><img class="img-polaroid" src="http://placehold.it/150x150"/></td>
+	<% else %>
+		<td><%= image_tag(result.image["thumb_url"], :class => 'img-polaroid') %></td>
+	<% end %>
 
-				</div>
-			</li>
-		<% end %>
-	</ul>	
-</div>
+    <td><%= result.name %></td>
+    <td><%= result.deck %></td>
+    <td>              
+    <%= form_tag game_path, :method => 'get' do %>
+    <p>
+        <%= hidden_field_tag(:game, result.name) %>
+        <%= submit_tag 'Read More', :name => nil, :class => "btn btn-info" %>
+    </p>
+    <% end %>
+	</td>
+</tr>
+<% end %>
+</table>
 
 <%= will_paginate @results, :renderer => BootstrapPagination::Rails %>

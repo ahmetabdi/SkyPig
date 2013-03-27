@@ -42,8 +42,14 @@
 					<li><a href="#">Discussions</a></li>
 					<li><%= link_to 'Users', users_path %></li>
 				</ul>
+					<%= form_tag movie_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
+    					<%= text_field_tag :search_game, params[:search_game], :class => 'span2', :placeholder => 'Search Movie API' %>
+					<% end %>
 					<%= form_tag results_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
-    					<%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => 'Search' %>
+    					<%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => 'Search Game API' %>
+					<% end %>
+					<%= form_tag search_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
+    					<%= text_field_tag :search_wiki, params[:search_wiki], :class => 'span2', :placeholder => 'Search Wiki' %>
 					<% end %>
 			</div>
 		</div>

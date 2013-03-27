@@ -3,7 +3,7 @@ require 'kramdown'
 
 module Stiki
   class PagesController < ApplicationController
-    before_filter :get_space
+    before_filter :get_space, :except => [:search]
     
     def index
       @spaces = Space.all
@@ -23,6 +23,23 @@ module Stiki
         markdown = Kramdown::Document.new(@page.body)
         
         @markup = markdown.to_html.html_safe
+      end
+    end
+
+    def search
+      @spaces = Space.all
+      
+
+      @page = Page.find(:all, :conditions => ["stiki_pages.title LIKE ?", "%#{params[:search_wiki]}%"] )
+      @page =  @page.paginate(:page => params[:page], :per_page => 6)
+      
+      if @page.nil?
+        flash[:error] = "Wiki Pages does not exist: #{params[:id]}"
+        redirect_to stiki_routes.space_pages_path(@space)
+      else
+        #markdown = Kramdown::Document.new(@page.body)
+        
+        #@markup = markdown.to_html.html_safe
       end
     end
     

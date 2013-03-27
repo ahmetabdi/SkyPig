@@ -19,6 +19,13 @@ gem 'will_paginate-bootstrap'
 gem 'tinymce-rails'
 gem 'disqus'
 gem 'carrierwave'
+#imdb-party dependencies
+gem 'jeweler'
+gem 'shoulda'
+gem 'httparty', '=0.8.2'
+gem 'imdb_party'
+#scrape images off imdb - not allowed in a public site
+gem 'mechanize'
 
 
 # Gems used only for assets and not required
