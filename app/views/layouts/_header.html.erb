@@ -43,7 +43,7 @@
 					<li><%= link_to 'Users', users_path %></li>
 				</ul>
 					<%= form_tag movie_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
-    					<%= text_field_tag :search_game, params[:search_game], :class => 'span2', :placeholder => 'Search Movie API' %>
+    					<%= text_field_tag :search_movie, params[:search_movie], :class => 'span2', :placeholder => 'Search Movie API' %>
 					<% end %>
 					<%= form_tag results_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
     					<%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => 'Search Game API' %>

@@ -1,3 +1,41 @@
+<script language="JavaScript">
+
+  $(document).ready(function() {
+    var clip = new ZeroClipboard( document.getElementById("copy-button"), {
+      moviePath: "assets/ZeroClipboard.swf"
+    });
+
+    clip.on('load', function (client) {
+      debugstr("Flash movie loaded and ready.");
+    });
+
+    clip.on('noflash', function (client) {
+      $(".demo-area").hide();
+      debugstr("Your browser has no flash.");
+    });
+
+    clip.on('complete', function (client, args) {
+      debugstr("Copied text to clipboard: " + args.text );
+    });
+
+    // jquery stuff (optional)
+    function debugstr(text) {
+      $("#d_debug").append($("<p>").text(text));
+    }
+
+    $("#fe_text").on("change", function(){
+      clip.setText($(this).val());
+    });
+
+    $("#clear-test").on("click", function(){
+      $("#fe_text").val("Click me!");
+      $("#testarea").val("");
+      clip.resetText();
+    });
+  })
+
+</script>
+
 <div class="row-fluid">
 	<div class="span9">
 		<div class="row-fluid">
@@ -22,24 +60,24 @@
 			</div>
 		</div>
 	</div>
-
-      <div class="span3">
-        <div class="row-fluid">
-          <div class="span12 well">
-            <div>
-              <ul class="nav nav-list author">
-                <%= image_tag(@game.image["super_url"], :class => 'img-polaroid') %>
-                <li class="nav-header">Game Name: </li>
-                <%= @game.name %>
-                <li class="nav-header">Release Date: </li>
-               
-                <% date = DateTime.parse(@game.original_release_date) %>
-                <%=  formatted_date = date.strftime('%B %m, %Y ')%>
-              </ul>
-            </div>  
-          <div>
-        </div>
-      </div>
+	<div class="span3">
+		<div class="row-fluid">
+			<div class="span12 well">
+				<div>
+					<ul class="nav nav-list author">
+        		<%= image_tag(@game.image["super_url"], :class => 'img-polaroid') %>
+        		<li class="nav-header">Game Name: </li>
+        		<%= @game.name %>
+        		<li class="nav-header">Release Date: </li> 
+        		<% date = DateTime.parse(@game.original_release_date) %>
+         		<%=  formatted_date = date.strftime('%B %m, %Y ')%>
+          	<br />
+          	<button id="copy-button" class="btn btn-info" data-clipboard-text="<%= @game.description %>" title="Copy contents">Copy content to clipboard</button>
+          </ul>
+        </div>  
+      <div>
+    </div>
+  </div>
     </div>
   </div>
 </div>

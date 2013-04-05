@@ -6,7 +6,7 @@ require 'will_paginate/array'
 
 	def index
 		@movies = ImdbParty::Imdb.new
-		@results = @movies.find_by_title(params[:search_game]).as_json
+		@results = @movies.find_by_title(params[:search_movie]).as_json
 		@result = @results.paginate(:page => params[:page], :per_page => 5)
 	end
 
