@@ -11,21 +11,31 @@ group :production do
   gem 'pg'
 end
 
+#https://github.com/intelekshual/giantbomb
 gem 'giantbomb'
+#https://github.com/mguymon/stiki
 gem 'stiki'
+#https://github.com/plataformatec/devise
 gem 'devise'
+#https://github.com/mislav/will_paginate
 gem 'will_paginate'
+#https://github.com/nickpad/will_paginate-bootstrap
 gem 'will_paginate-bootstrap'
+#https://github.com/spohlenz/tinymce-rails
 gem 'tinymce-rails'
+#https://github.com/norman/disqus
 gem 'disqus'
+#https://github.com/jnicklas/carrierwave
 gem 'carrierwave'
 #imdb-party dependencies
+gem 'imdb_party'
 gem 'jeweler'
 gem 'shoulda'
 gem 'httparty', '=0.8.2'
-gem 'imdb_party'
 #scrape images off imdb - not allowed in a public site
 gem 'mechanize'
+#AWS SDK for Ruby - http://aws.amazon.com/sdkforruby/
+gem 'aws-sdk'
 
 
 # Gems used only for assets and not required
