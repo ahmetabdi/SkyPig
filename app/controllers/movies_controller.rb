@@ -15,6 +15,8 @@ require 'will_paginate/array'
 	def show
 		@movies = ImdbParty::Imdb.new
 		@movie = @movies.find_movie_by_id(params[:movie])
+		s3 = AWS::S3.new
+		@bucket = s3.buckets['imdb_images']
 	end
 
 end

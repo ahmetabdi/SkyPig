@@ -14,8 +14,8 @@
 	<div class="span9">
 		<div class="row-fluid">
 			<div class="span12 well">
-				<h1><%= @movie.title %></h1> <br />
-				<h4><%= @movie.tagline %></h4> <br />
+				<h1><%= @movie.title %></h1>
+				<%= @movie.tagline %> <br />
 				<%= @movie.plot %> <br />
 				<h2>Directors</h2> <br />
 				<% @movie.directors.each do |director| %> <%= director.name %> <% end %><br />
@@ -25,7 +25,6 @@
 				<% @movie.actors.each do |actor| %> <%= actor.name %> as <%= actor.role %> <br /><% end %> 
 				<h2>Trailers</h2> <br />
 				<% @movie.trailers.each do |trailer| %> 
-
 					<b><%= trailer[0] %></b><br />
 					<div data-swf="http://releases.flowplayer.org/5.3.2/flowplayer.swf" class="flowplayer no-toggle" data-ratio="0.416">
       				<video>
@@ -33,19 +32,16 @@
       				</video>
    				</div><br /> 
 				<% end %> <br />
-
-
-
 			</div>
 		</div>
 	</div>
-
       <div class="span3">
         <div class="row-fluid">
           <div class="span12 well">
             <div>
               <ul class="nav nav-list author">
-              	<%= image_tag("movie/#{@movie.imdb_id}.jpg", :class => 'img-polaroid') %>
+                <% movie_image = @bucket.objects["#{@movie.imdb_id}.jpg"] %>
+              	<%= image_tag(movie_image.url_for(:read, expires: 10*60).to_s, :class => 'img-polaroid') %>
                 <li class="nav-header">Movie Name: </li>
                 <%= @movie.title %>
                 <li class="nav-header">Certification: </li>

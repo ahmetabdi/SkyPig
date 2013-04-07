@@ -16,12 +16,10 @@
 <% if movie_info.poster_url %>
 	<% agent = Mechanize.new %>
 	<% agent.get("#{movie_info.poster_url}").save "app/assets/images/#{movie["imdb_id"].to_s}.jpg" %>
-
 	<% @bucket.objects.create("#{movie["imdb_id"].to_s}.jpg", open("app/assets/images/#{movie["imdb_id"].to_s}.jpg")) %>
-	<% song = @bucket.objects["#{movie["imdb_id"].to_s}.jpg"] %>
-
+	<% movie_image = @bucket.objects["#{movie["imdb_id"].to_s}.jpg"] %>
 	<td>
-		<%= image_tag(song.url_for(:read, expires: 10*60).to_s, :class => 'img-polaroid', :width => "75") %>
+		<%= image_tag(movie_image.url_for(:read, expires: 10*60).to_s, :class => 'img-polaroid', :width => "75") %>
 	</td>
 <% else %>
 	<td>
