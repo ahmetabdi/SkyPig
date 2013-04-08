@@ -1,3 +1,39 @@
+<script language="JavaScript">
+
+  $(document).ready(function() {
+    var clip = new ZeroClipboard( document.getElementById("copy-button"), {
+      moviePath: "assets/ZeroClipboard.swf"
+    });
+
+    clip.on('load', function (client) {
+      debugstr("Flash movie loaded and ready.");
+    });
+
+    clip.on('noflash', function (client) {
+      $(".demo-area").hide();
+      debugstr("Your browser has no flash.");
+    });
+
+    clip.on('complete', function (client, args) {
+      debugstr("Copied text to clipboard: " + args.text );
+    });
+
+    // jquery stuff (optional)
+    function debugstr(text) {
+      $("#d_debug").append($("<p>").text(text));
+    }
+
+    $("#fe_text").on("change", function(){
+      clip.setText($(this).val());
+    });
+
+    $("#clear-test").on("click", function(){
+      $("#fe_text").val("Click me!");
+      $("#testarea").val("");
+      clip.resetText();
+    });
+  })
+</script>
 <style>
    /* custom player skin */
    .flowplayer { width: 80%; background-color: #222; background-size: cover; max-width: 800px; }
@@ -6,7 +42,6 @@
    .flowplayer .fp-progress { background-color: rgba(219, 0, 0, 1)}
    .flowplayer .fp-buffer { background-color: rgba(249, 249, 249, 1)}
    .flowplayer { background-image: url("assets/movie/<%= @movie.imdb_id %>.jpg")}
-
 </style>
 <link rel="stylesheet" type="text/css" href="http://releases.flowplayer.org/5.3.2/skin/minimalist.css" />
 <script src="http://releases.flowplayer.org/5.3.2/flowplayer.min.js"></script>
@@ -17,13 +52,13 @@
 				<h1><%= @movie.title %></h1>
 				<%= @movie.tagline %> <br />
 				<%= @movie.plot %> <br />
-				<h2>Directors</h2> <br />
+				<h2>Directors</h2>
 				<% @movie.directors.each do |director| %> <%= director.name %> <% end %><br />
-				<h2>Writers</h2> <br />
+				<h2>Writers</h2>
 				<% @movie.writers.each do |writer| %> <%= writer.name %> <% end %> <br />
-				<h2>Actors</h2> <br />
+				<h2>Actors</h2>
 				<% @movie.actors.each do |actor| %> <%= actor.name %> as <%= actor.role %> <br /><% end %> 
-				<h2>Trailers</h2> <br />
+				<h2>Trailers</h2>
 				<% @movie.trailers.each do |trailer| %> 
 					<b><%= trailer[0] %></b><br />
 					<div data-swf="http://releases.flowplayer.org/5.3.2/flowplayer.swf" class="flowplayer no-toggle" data-ratio="0.416">
@@ -47,14 +82,14 @@
                 <li class="nav-header">Certification: </li>
                 <%= @movie.certification %>
                 <li class="nav-header">Release Date: </li>
-                <% date = DateTime.parse(@movie.release_date) %>
-                <%=  formatted_date = date.strftime('%B %m, %Y ')%>
+                <%= @movie.release_date %>
                 <li class="nav-header">Run-time: </li>
                 <%= @movie.runtime %>
                 <li class="nav-header">IMDB Rating: </li>
                 <%= @movie.rating %>
                 <li class="nav-header">Genre: </li>
-                <% @movie.genres.each do |genre| %> <span class="label label-info"><%= genre %></span> <% end %> 
+                <% @movie.genres.each do |genre| %> <span class="label label-info"><%= genre %></span> <% end %> <br /> <br /> 
+                <button id="copy-button" class="btn btn-info" data-clipboard-text="<%= @movie.plot %>" title="Copy contents">Copy content to clipboard</button>
               </ul>
             </div>  
           <div>

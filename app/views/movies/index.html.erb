@@ -29,8 +29,7 @@
 
 <td><span class="label label-info"><%= movie_info.title %></span></td>
 <td><span class="label label-info"><%= movie_info.rating %></span></td>
-<% date = DateTime.parse(movie_info.release_date) %>
-<td><span class="label label-info"><%=  formatted_date = date.strftime('%B %m, %Y ')%></span></td>
+<td><span class="label label-info"><%= movie_info.release_date %></span></td>
 <td><span class="label label-info"><%= movie_info.certification %></span></td>
 <td><% movie_info.genres.each do |genre| %> <span class="label label-info"><%= genre %></span> <% end %> </td>
 <td>

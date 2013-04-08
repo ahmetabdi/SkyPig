@@ -33,7 +33,6 @@
       clip.resetText();
     });
   })
-
 </script>
 
 <div class="row-fluid">
@@ -43,20 +42,6 @@
 				<h1><%= @game.name %></h1> <br />
 				<%= @game.deck %> <br />
 				<%= @game.description.html_safe %> <br />
-
-				<%= @game.date_last_updated %> <br />
-				<%= @game.expected_release_quarter %> <br />
-				<%= @game.aliases %> <br />
-				<%= @game.site_detail_url %> <br />
-				<%= @game.api_detail_url %> <br />
-				<%= @game.number_of_user_reviews %> <br />
-				<%= @game.original_release_date %> <br />
-				<%= @game.original_game_rating %> <br />
-				<%= @game.expected_release_month %> <br />
-				<%= @game.date_added %> <br />
-				<%= @game.expected_release_year %> <br />
-				<%= @game.id %> <br />
-				<%= @game.date_last_updated %> <br />
 			</div>
 		</div>
 	</div>
@@ -69,8 +54,12 @@
         		<li class="nav-header">Game Name: </li>
         		<%= @game.name %>
         		<li class="nav-header">Release Date: </li> 
+            <% if @game.original_release_date.nil? %>
+            None
+            <% else %>
         		<% date = DateTime.parse(@game.original_release_date) %>
          		<%=  formatted_date = date.strftime('%B %m, %Y ')%>
+            <% end %>
           	<br />
           	<button id="copy-button" class="btn btn-info" data-clipboard-text="<%= @game.description %>" title="Copy contents">Copy content to clipboard</button>
           </ul>
