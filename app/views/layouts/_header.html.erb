@@ -1,26 +1,25 @@
 <div class="header">
-
 	<% if signed_in? %>
-	<div class="navbar to-the-right">
-		<div class="navbar-inner">
-			<ul class="nav">
-				<li><%= link_to "My Account", user_path(current_user) %></li>
-  				<li class="divider-vertical"></li>
-  				<li><%= link_to "Logout", '/logout' %></li>
-				<li>
+		<div class="navbar to-the-right">
+			<div class="navbar-inner">
+				<ul class="nav">
+					<li><%= link_to "My Account", user_path(current_user) %></li>
+  					<li class="divider-vertical"></li>
+  					<li><%= link_to "Logout", '/logout' %></li>
+					<li>
   			</ul>
   		</div>
-	</div>
+		</div>
 	<% else %>
-	<div class="navbar to-the-right">
-		<div class="navbar-inner">
-			<ul class="nav">
-				<li><%= link_to "Register", '/register' %></li>
-  				<li class="divider-vertical"></li>
-  				<li><%= link_to "Login", '/login' %></li>
+		<div class="navbar to-the-right">
+			<div class="navbar-inner">
+				<ul class="nav">
+					<li><%= link_to "Register", '/register' %></li>
+  					<li class="divider-vertical"></li>
+  					<li><%= link_to "Login", '/login' %></li>
   			</ul>
   		</div>
-	</div>
+		</div>
 	<% end %>
 
 	<% sky_pig_logo = image_tag("pigs/skypigtxt.png", :class => "logo") %>
@@ -32,28 +31,23 @@
 				<ul class="nav">
 					<li class="active"><%= link_to 'Home', root_path %></li>
 					<li class="dropdown">
-                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Browse Wiki <b class="caret"></b></a>
-                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                      	<% Stiki::Space.all.each do |space| %>
-                      	<li><%= link_to space.name, stiki_routes.space_pages_path(space) %></li>
-                      	<% end %>
-                      </ul>
-                    </li>
+          	<a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Browse Wiki <b class="caret"></b></a>
+          	<ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+            	<% Stiki::Space.all.each do |space| %>
+              	<li><%= link_to space.name, stiki_routes.space_pages_path(space) %></li>
+            	<% end %>
+          	</ul>
+          </li>
 					<li><a href="#">Discussions</a></li>
 					<li><%= link_to 'Users', users_path %></li>
 				</ul>
-					<%= form_tag movie_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
-    					<%= text_field_tag :search_movie, params[:search_movie], :class => 'span2', :placeholder => 'Search Movie API' %>
+					<%= form_tag("/search", :class => 'navbar-form to-the-right',:method => "get") do %>
+  					<%= text_field_tag(:query, nil, :class => "span2", :placeholder => 'Search API') %>
 					<% end %>
-					<%= form_tag results_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
-    					<%= text_field_tag :search, params[:search], :class => 'span2', :placeholder => 'Search Game API' %>
-					<% end %>
-					<%= form_tag search_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
+					<%= form_tag wiki_search_path, :class => 'navbar-form to-the-right', :method => 'get' do %>
     					<%= text_field_tag :search_wiki, params[:search_wiki], :class => 'span2', :placeholder => 'Search Wiki' %>
 					<% end %>
 			</div>
 		</div>
 	</div>
-
 </div>
-

@@ -2,6 +2,12 @@ SkyPig::Application.routes.draw do
 
   devise_for :users
   resources :users
+  #movieapi
+  resources :movies
+  resources :collections
+  resources :person
+  resources :company
+  resources :games
 
   devise_for :users, :controllers => {:sessions => 'devise/sessions', :registrations => 'devise/registrations', :passwords => 'devise/passwords'}, :skip => [:sessions] do
     get '/login' => 'devise/sessions#new', :as => :new_user_session
@@ -14,9 +20,11 @@ SkyPig::Application.routes.draw do
 
   match 'results' => "results#index"
   match 'game' => "results#show"
-  match 'search' => "stiki::pages#search"
-  match 'movie' => "movies#index"
-  match 'movie_results' => "movies#show"
+  match 'wiki_search' => "stiki::pages#search"
+  get "search/index"
+  match 'search' => "search#index"
+  #match 'movie' => "movies#index"
+  #match 'movie_results' => "movies#show"
 
   
   resources :authors, :controller => 'stiki::authors'

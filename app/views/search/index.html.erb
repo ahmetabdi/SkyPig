@@ -1,0 +1,51 @@
+<div class="row-fluid">
+	<div class="well space">			
+		<div class="tabbable">
+  		<ul class="nav nav-tabs">
+    		<li class="active"><a href="#tab1" data-toggle="tab">Movies(<%= @movie.count %>)</a></li>
+    		<li><a href="#tab2" data-toggle="tab">Games(<%= @game.count %>)</a></li>
+  		</ul>
+  		<div class="tab-content">
+    		<div class="tab-pane active" id="tab1">
+      		<table class="table table-bordered table-striped table-hover">
+						<% @movie_result.each do |movie| %>
+							<tr>
+								<td style="width:15%">
+									<%= link_to movie_path(movie.id) do %>
+										<%= image_tag("#{@configuration.base_url}w154#{movie.poster_path}") if movie.poster_path %>
+									<% end %>
+									<% unless movie.poster_path %><img src="http://placehold.it/154x154"><% end %>
+								</td>
+								<td>
+									<%= link_to movie.title, movie_path(movie.id) %> (<%= movie.release_date.to_date.strftime("%Y") if movie.release_date %><% unless movie.release_date %>No Date Available<% end %>) <br />
+									Directors: <% Tmdb::Movie.crew(movie.id).each do |crew| %> <% if crew['department'] == 'Directing' %> <%= link_to crew['name'], person_path(crew['id']) %> <% end %><% end %><br />
+									Starring: <% Tmdb::Movie.casts(movie.id).first(3).each do |cast| %> <%= link_to cast['name'], person_path(cast['id']) %> | <% end %><br />
+								</td>
+							</tr>
+						<% end %>
+					</table>
+					<%= will_paginate @movie_result, :renderer => BootstrapPagination::Rails %>
+    		</div>
+    		<div class="tab-pane" id="tab2">
+      		<table class="table table-bordered table-striped table-hover">
+						<% @game_result.each do |game| %>
+							<tr>
+								<td style="width:15%">
+									<%= link_to game_path(game.id) do %>
+										<%= image_tag(game.image["thumb_url"]) if game.image %>
+									<% end %>
+									<% unless game.image %><img src="http://placehold.it/154x154"><% end %>
+								</td>
+								<td>
+									<%= link_to game.name, game_path(game.id) %> (<%= game.original_release_date.to_date.strftime("%Y") if game.original_release_date %><% unless game.original_release_date %>No Date Available<% end %>) <br />
+									<%= game.deck %>
+								</td>
+							</tr>
+						<% end %>
+					</table>
+					<%= will_paginate @game_result, :renderer => BootstrapPagination::Rails %>
+    		</div>
+  		</div>
+		</div>
+	</div>
+</div>

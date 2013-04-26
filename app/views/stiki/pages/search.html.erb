@@ -1,47 +1,22 @@
-<style type="text/css">
-.thumbnail {
-  border: 0px;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-}
-.container{
-  width: auto;
-}
-.item{
-  background-color:whiteSmoke;
-  width: 320px;
-  height: 380px;
-  margin: 5px;
-  float: left;
-}
-</style>
-<script type="text/javascript">
-$(document).ready(function() {
-
-  $('.row-fluid').isotope({
-      itemSelector : '.item',
-      layoutMode : 'fitRows'
-  });
-
-});
-</script>
-
-<div class="row-fluid">
-  <ul class="thumbnails"> 
-    <% @page.each do |result| %>
-      <li class="item box raised">
-        <div class="thumbnail">
-          <% if result.image_url.nil? %>
-            <%= image_tag("placeholder.jpg", :class => 'img-polaroid', :size => "150x150") %>
-          <% else %>
+<table class="table table-bordered table-striped">
+  <% @page.each do |result| %>
+    <tr>
+      <td style="width:15%">
+        <% if result.image_url.nil? %>
+          <img class='img-polaroid' src="http://placehold.it/125x125">
+        <% else %>
+          <%= link_to stiki_routes.space_page_path(result.space, result) do %>
             <%= image_tag(result.image_url, :class => 'img-polaroid', :size => "125x125") %>
           <% end %>
-          <h3><%= link_to result.title, stiki_routes.space_page_path(result.space, result) %></h3>
-          <p><%= truncate(result.body, :length => 100).html_safe %></p>
-
-        </div>
-      </li>
-    <% end %>
-  </ul> 
-</div>
+        <% end %>
+      </td>
+      <td>
+          <h2><%= link_to result.title, stiki_routes.space_page_path(result.space, result) %></h2>
+          <p>Last Updated: <%= result.updated_at %></p>
+          <p><%= truncate(result.body, :length => 600).html_safe %></p>
+      </td>
+    </tr>
+  <% end %>
+</table>
 
 <%= will_paginate @page, :renderer => BootstrapPagination::Rails %>

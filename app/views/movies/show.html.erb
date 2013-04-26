@@ -1,99 +1,74 @@
-<script language="JavaScript">
-
-  $(document).ready(function() {
-    var clip = new ZeroClipboard( document.getElementById("copy-button"), {
-      moviePath: "assets/ZeroClipboard.swf"
-    });
-
-    clip.on('load', function (client) {
-      debugstr("Flash movie loaded and ready.");
-    });
-
-    clip.on('noflash', function (client) {
-      $(".demo-area").hide();
-      debugstr("Your browser has no flash.");
-    });
-
-    clip.on('complete', function (client, args) {
-      debugstr("Copied text to clipboard: " + args.text );
-    });
-
-    // jquery stuff (optional)
-    function debugstr(text) {
-      $("#d_debug").append($("<p>").text(text));
-    }
-
-    $("#fe_text").on("change", function(){
-      clip.setText($(this).val());
-    });
-
-    $("#clear-test").on("click", function(){
-      $("#fe_text").val("Click me!");
-      $("#testarea").val("");
-      clip.resetText();
-    });
-  })
-</script>
-<style>
-   /* custom player skin */
-   .flowplayer { width: 80%; background-color: #222; background-size: cover; max-width: 800px; }
-   .flowplayer .fp-controls { background-color: rgba(0, 0, 0, 0.4)}
-   .flowplayer .fp-timeline { background-color: rgba(0, 0, 0, 0.5)}
-   .flowplayer .fp-progress { background-color: rgba(219, 0, 0, 1)}
-   .flowplayer .fp-buffer { background-color: rgba(249, 249, 249, 1)}
-   .flowplayer { background-image: url("assets/movie/<%= @movie.imdb_id %>.jpg")}
-</style>
-<link rel="stylesheet" type="text/css" href="http://releases.flowplayer.org/5.3.2/skin/minimalist.css" />
-<script src="http://releases.flowplayer.org/5.3.2/flowplayer.min.js"></script>
 <div class="row-fluid">
-	<div class="span9">
-		<div class="row-fluid">
-			<div class="span12 well">
-				<h1><%= @movie.title %></h1>
-				<%= @movie.tagline %> <br />
-				<%= @movie.plot %> <br />
-				<h2>Directors</h2>
-				<% @movie.directors.each do |director| %> <%= director.name %> <% end %><br />
-				<h2>Writers</h2>
-				<% @movie.writers.each do |writer| %> <%= writer.name %> <% end %> <br />
-				<h2>Actors</h2>
-				<% @movie.actors.each do |actor| %> <%= actor.name %> as <%= actor.role %> <br /><% end %> 
-				<h2>Trailers</h2>
-				<% @movie.trailers.each do |trailer| %> 
-					<b><%= trailer[0] %></b><br />
-					<div data-swf="http://releases.flowplayer.org/5.3.2/flowplayer.swf" class="flowplayer no-toggle" data-ratio="0.416">
-      				<video>
-      					<source type="video/mp4" src="<%= trailer[1] %>"/>
-      				</video>
-   				</div><br /> 
-				<% end %> <br />
-			</div>
-		</div>
-	</div>
-      <div class="span3">
-        <div class="row-fluid">
-          <div class="span12 well">
-            <div>
-              <ul class="nav nav-list author">
-                <% movie_image = @bucket.objects["#{@movie.imdb_id}.jpg"] %>
-              	<%= image_tag(movie_image.url_for(:read, expires: 10*60).to_s, :class => 'img-polaroid') %>
-                <li class="nav-header">Movie Name: </li>
-                <%= @movie.title %>
-                <li class="nav-header">Certification: </li>
-                <%= @movie.certification %>
-                <li class="nav-header">Release Date: </li>
-                <%= @movie.release_date %>
-                <li class="nav-header">Run-time: </li>
-                <%= @movie.runtime %>
-                <li class="nav-header">IMDB Rating: </li>
-                <%= @movie.rating %>
-                <li class="nav-header">Genre: </li>
-                <% @movie.genres.each do |genre| %> <span class="label label-info"><%= genre %></span> <% end %> <br /> <br /> 
-                <button id="copy-button" class="btn btn-info" data-clipboard-text="<%= @movie.plot %>" title="Copy contents">Copy content to clipboard</button>
-              </ul>
-            </div>  
-          <div>
-        </div>
+  <div class="span9">
+    <div class="row-fluid">
+      <div class="span12 well">
+        <h2><%= @movie.title %></h2>
+        <%= @movie.vote_average %> from <%= @movie.vote_count %> voters.
+
+        <h3>Overview</h3>
+        <%= @movie.overview %>
+
+        <h3>Tagline</h3>
+        <%= @movie.tagline %><br />
+
+        <h3>Images</h3>
+        <% @images.each do |image| %>
+          <%= image_tag("#{@configuration.base_url}w154#{image['file_path']}") if image['file_path'] %>
+        <% end %>
+
+        <h3>Genres</h3>
+        <% @movie.genres.each do |genre| %>
+          <%= genre['name'] %>
+        <% end %>
+
+        <h3>Casts</h3>
+        <table class="table table-bordered table-striped table-hover">
+          <% @cast.first(5).each do |cast| %>
+          <tr>
+            <td style="width:15%">
+              <%= image_tag("#{@configuration.base_url}w300#{cast['profile_path']}") if cast['profile_path'] %>
+            </td>
+            <td>
+              <%= link_to cast['name'], person_path(cast['id']) %> as <%= cast['character'] %><br />
+            </td>
+          </tr>
+          <% end %>
+        </table>
+
+        <h3>Similar Movies</h3>
+        <% @similar_movies.each do |movie| %>
+          <% if movie %>
+            <%= link_to movie_path(movie['id']) do %>
+              <%= image_tag("#{@configuration.base_url}w92#{movie['poster_path']}") if movie['poster_path'] %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+  <div class="span3">
+    <div class="row-fluid">
+      <div class="span12 well">
+        <div>
+          <ul class="nav nav-list author">
+            <%= image_tag("#{@configuration.base_url}w154#{@movie.poster_path}") if @movie.poster_path %>
+            <li class="nav-header">Budget: </li>
+            $<%= number_with_delimiter(@movie.budget, :delimiter => ',') %>
+            <li class="nav-header">Revenue: </li>
+            $<%= number_with_delimiter(@movie.revenue, :delimiter => ',') %>
+            <li class="nav-header">Status: </li>
+            <%= @movie.status %><br />
+            <li class="nav-header">Runtime: </li>
+            <%= @movie.runtime %><br />
+            <li class="nav-header">Release Date: </li>
+            <%= @movie.release_date.to_date.strftime("%d/%m/%Y") if @movie.release_date %>
+            <li class="nav-header">Trailers: </li>
+            <% @trailers['youtube'].each do |trailer| %>
+              <%= link_to "#{trailer['name']} - #{trailer['size']}", "http://www.youtube.com/watch?v=#{trailer['source']}" %><br />
+            <% end %>
+          </ul>
+        </div>  
       </div>
     </div>
   </div>

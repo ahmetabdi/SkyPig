@@ -154,6 +154,8 @@ GEM
       friendly_id (~> 4.0.1)
       kramdown (~> 0.14.0)
       rails (~> 3.2.1)
+    themoviedb (0.0.4)
+      httparty
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -201,6 +203,7 @@ DEPENDENCIES
   shoulda
   sqlite3
   stiki
+  themoviedb
   thin
   tinymce-rails
   uglifier (>= 1.0.3)

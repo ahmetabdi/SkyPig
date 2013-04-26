@@ -1,22 +1,11 @@
 class MoviesController < ApplicationController
-require 'imdb_party'
-require 'httparty'
-require 'json'
-require 'will_paginate/array'
-
-	def index
-		@movies = ImdbParty::Imdb.new
-		@results = @movies.find_by_title(params[:search_movie]).as_json
-		@result = @results.paginate(:page => params[:page], :per_page => 5)
-		s3 = AWS::S3.new
-		@bucket = s3.buckets['imdb_images']
-	end
 
 	def show
-		@movies = ImdbParty::Imdb.new
-		@movie = @movies.find_movie_by_id(params[:movie])
-		s3 = AWS::S3.new
-		@bucket = s3.buckets['imdb_images']
+  	@movie = Tmdb::Movie.detail(params[:id])
+  	@images = Tmdb::Movie.images(params[:id])
+  	@cast = Tmdb::Movie.casts(params[:id])
+  	@trailers = Tmdb::Movie.trailers(params[:id])
+  	@similar_movies = Tmdb::Movie.similar_movies(params[:id])
 	end
 
 end

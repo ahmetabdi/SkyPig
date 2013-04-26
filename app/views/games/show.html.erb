@@ -1,0 +1,26 @@
+<div class="row-fluid">
+	<div class="span9">
+		<div class="row-fluid">
+			<div class="span12 well">
+				<h1><%= @game.name %></h1> <br />
+				<%= @game.deck %> <br />
+				<%= @game.description.html_safe %> <br />
+			</div>
+		</div>
+	</div>
+	<div class="span3">
+		<div class="row-fluid">
+			<div class="span12 well">
+				<div>
+					<ul class="nav nav-list author">
+        		<%= image_tag(@game.image["super_url"], :class => 'img-polaroid') %>
+        		<li class="nav-header">Game Name: </li>
+        		<%= @game.name %>
+        		<li class="nav-header">Release Date: </li> 
+            <%= @game.original_release_date.to_date.strftime("%d/%m/%Y") if @game.original_release_date %>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>

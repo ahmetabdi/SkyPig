@@ -21,8 +21,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
  
-  
-  
   #Editting a user
   #Normal users can change there own password.
   def edit

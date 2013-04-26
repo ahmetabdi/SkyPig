@@ -11,6 +11,8 @@ group :production do
   gem 'pg'
 end
 
+#Movie DB API Gem created by ME
+gem 'themoviedb'
 #https://github.com/intelekshual/giantbomb
 gem 'giantbomb'
 #https://github.com/mguymon/stiki
