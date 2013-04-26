@@ -5,5 +5,8 @@ class SearchController < ApplicationController
 
 		@game = GiantBomb::Game.find(params[:query])
 		@game_result = @game.paginate(:page => params[:page], :per_page => 5)
+
+		@person = Tmdb::People.find(params[:query])
+		@person_result = @person.paginate(:page => params[:page], :per_page => 5)
 	end
 end

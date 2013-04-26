@@ -27,6 +27,7 @@
           <tr>
             <td style="width:15%">
               <%= image_tag("#{@configuration.base_url}w300#{cast['profile_path']}") if cast['profile_path'] %>
+              <% unless cast['profile_path'] %><img src="http://placehold.it/154x154"><% end %>
             </td>
             <td>
               <%= link_to cast['name'], person_path(cast['id']) %> as <%= cast['character'] %><br />
@@ -36,7 +37,7 @@
         </table>
 
         <h3>Similar Movies</h3>
-        <% @similar_movies.each do |movie| %>
+        <% @similar_movies.first(16).each do |movie| %>
           <% if movie %>
             <%= link_to movie_path(movie['id']) do %>
               <%= image_tag("#{@configuration.base_url}w92#{movie['poster_path']}") if movie['poster_path'] %>

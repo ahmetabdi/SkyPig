@@ -4,6 +4,7 @@
   		<ul class="nav nav-tabs">
     		<li class="active"><a href="#tab1" data-toggle="tab">Movies(<%= @movie.count %>)</a></li>
     		<li><a href="#tab2" data-toggle="tab">Games(<%= @game.count %>)</a></li>
+    		<li><a href="#tab3" data-toggle="tab">People(<%= @person.count %>)</a></li>
   		</ul>
   		<div class="tab-content">
     		<div class="tab-pane active" id="tab1">
@@ -44,6 +45,24 @@
 						<% end %>
 					</table>
 					<%= will_paginate @game_result, :renderer => BootstrapPagination::Rails %>
+    		</div>
+    		<div class="tab-pane" id="tab3">
+      		<table class="table table-bordered table-striped table-hover">
+						<% @person_result.each do |people| %>
+							<tr>
+								<td style="width:15%">
+									<%= link_to person_path(people.id) do %>
+										<%= image_tag("#{@configuration.base_url}w154#{people.profile_path}") if people.profile_path %>
+									<% end %>
+									<% unless people.profile_path %><img src="http://placehold.it/154x154"><% end %>
+								</td>
+								<td>
+									<%= link_to people.name, person_path(people.id) %>
+								</td>
+							</tr>
+						<% end %>
+					</table>
+					<%= will_paginate @person_result, :renderer => BootstrapPagination::Rails %>
     		</div>
   		</div>
 		</div>
