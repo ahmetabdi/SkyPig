@@ -6,9 +6,14 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', :group => [:development, :test]
+
 group :production do
   gem 'thin'
   gem 'pg'
+end
+
+group :test, :development do
+  gem "rspec-rails"
 end
 
 #Movie DB API Gem created by ME
@@ -38,7 +43,9 @@ gem 'httparty', '=0.8.2'
 gem 'mechanize'
 #AWS SDK for Ruby - http://aws.amazon.com/sdkforruby/
 gem 'aws-sdk'
-
+gem 'cancan'
+gem 'shoulda-matchers'
+gem 'factory_girl'
 
 # Gems used only for assets and not required
 # in production environments by default.
