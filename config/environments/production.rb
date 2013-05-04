@@ -64,12 +64,6 @@ SkyPig::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  #Rails Admin precompile for heroku
-  # Prevent initializing the application before assets are precompiled (required for heroku)
-  config.assets.initialize_on_precompile = false
-  # Add Rails Admin assets (required)
-  config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
-
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

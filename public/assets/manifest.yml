@@ -30,9 +30,9 @@
 !binary "cGxhY2Vob2xkZXIuanBn": placeholder-8a97d09ace2d68ffb8fff37f667f3b48.jpg
 !binary "cmFpbHMucG5n": rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 !binary "c2VwYXJhdG9yLnBuZw==": separator-342d4eb17dbd422f59ab600666041150.png
-!binary "YXBwbGljYXRpb24uanM=": application-9a1c0f227c9481da69f248413ab75320.js
+!binary "YXBwbGljYXRpb24uanM=": application-20ffc553b7458db1924c6e3ce8fbe0d9.js
 !binary "c3Rpa2kvYXBwbGljYXRpb24uanM=": stiki/application-fe872ff963c506bffe84113b0f98f1ce.js
-!binary "YXBwbGljYXRpb24uY3Nz": application-88ea183ed0bce305c268dc2576c28402.css
+!binary "YXBwbGljYXRpb24uY3Nz": application-0679d034c7436b28a310f910a266c976.css
 !binary "c3Rpa2kvYXBwbGljYXRpb24uY3Nz": stiki/application-ed290719192d8a4c54a1e7c22c9cc003.css
 !binary "dGlueW1jZS5qcw==": tinymce-0ed066d99a2aa548212c220d5e342860.js
 !binary "dGlueW1jZS9saWNlbnNlLnR4dA==": tinymce/license-1ec127777c811211027640b3b24364f2.txt
@@ -202,3 +202,100 @@
   dGlueW1jZS90aGVtZXMvc2ltcGxlL3NraW5zL28yazcvaW1nL2J1dHRvbl9i
   Zy5wbmc=
 : tinymce/themes/simple/skins/o2k7/img/button_bg-7440b39028766c2e66ed3bbc41617ee5.png
+!binary "cmFpbHNfYWRtaW4vYXJpc3RvL2ltYWdlcy9iZ19mYWxsYmFjay5wbmc=": rails_admin/aristo/images/bg_fallback-3d4bcd1b12558498d7a2b23ef9bae072.png
+!binary "cmFpbHNfYWRtaW4vYXJpc3RvL2ltYWdlcy9pY29uX3Nwcml0ZS5wbmc=": rails_admin/aristo/images/icon_sprite-3e53b827179444eb3214614963723b82.png
+!binary "cmFpbHNfYWRtaW4vYXJpc3RvL2ltYWdlcy9wcm9ncmVzc19iYXIuZ2lm": rails_admin/aristo/images/progress_bar-04666131c29e989161fa7e05bdd8da04.gif
+!binary "cmFpbHNfYWRtaW4vYXJpc3RvL2ltYWdlcy9zbGlkZXJfaGFuZGxlcy5wbmc=": rails_admin/aristo/images/slider_handles-7bfea1a51f3813f4745018b420fc3a06.png
+? !binary |-
+  cmFpbHNfYWRtaW4vYXJpc3RvL2ltYWdlcy91aS1pY29uc18yMjIyMjJfMjU2
+  eDI0MC5wbmc=
+: rails_admin/aristo/images/ui-icons_222222_256x240-1d6ad45c0d1c9faeff27a0a675c92e3f.png
+? !binary |-
+  cmFpbHNfYWRtaW4vYXJpc3RvL2ltYWdlcy91aS1pY29uc180NTQ1NDVfMjU2
+  eDI0MC5wbmc=
+: rails_admin/aristo/images/ui-icons_454545_256x240-e941dc23bd0da21dcdc26253459ae5cd.png
+!binary "cmFpbHNfYWRtaW4vYnVsbGV0X2JsYWNrLnBuZw==": rails_admin/bullet_black-fb925ccd168e60d6e5d815a6aece4589.png
+!binary "cmFpbHNfYWRtaW4vYnVsbGV0X3doaXRlLnBuZw==": rails_admin/bullet_white-86d70088b3334fc9acb3a37faae42112.png
+!binary "cmFpbHNfYWRtaW4vY2FsZW5kYXIucG5n": rails_admin/calendar-cca216253be0feaad0d148eced6f3c35.png
+!binary "cmFpbHNfYWRtaW4vY2xvY2sucG5n": rails_admin/clock-62f4fe39764e566eaf8ff2712034c3b9.png
+? !binary |-
+  cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfYmFja2dyb3Vu
+  ZC5wbmc=
+: rails_admin/colorpicker/colorpicker_background-10ac107c4111e1d7c74fd0ca42e586a5.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfaGV4LnBuZw==": rails_admin/colorpicker/colorpicker_hex-cda9df94b31b57ae781eb4693ca8daa4.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfaHNiX2IucG5n": rails_admin/colorpicker/colorpicker_hsb_b-9766565545109ecb7b608db2f6e654f7.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfaHNiX2gucG5n": rails_admin/colorpicker/colorpicker_hsb_h-ded0199bdc6fd127c3af5a5c42adb81a.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfaHNiX3MucG5n": rails_admin/colorpicker/colorpicker_hsb_s-1285d0aa20aa075f766e3d64ef972a18.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfaW5kaWMuZ2lm": rails_admin/colorpicker/colorpicker_indic-a265cbcec55d8ebb2fa455406f3c4c67.gif
+? !binary |-
+  cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfb3ZlcmxheS5w
+  bmc=
+: rails_admin/colorpicker/colorpicker_overlay-625194597bb121c82a08acaeaa59b0b4.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfcmdiX2IucG5n": rails_admin/colorpicker/colorpicker_rgb_b-9766565545109ecb7b608db2f6e654f7.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfcmdiX2cucG5n": rails_admin/colorpicker/colorpicker_rgb_g-0fe08b970047b7de3d2edbe22cccaf6a.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfcmdiX3IucG5n": rails_admin/colorpicker/colorpicker_rgb_r-02ca04daa622dc7377ff900c90b3d70c.png
+? !binary |-
+  cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfc2VsZWN0Lmdp
+  Zg==
+: rails_admin/colorpicker/colorpicker_select-0b4517c9cb5daf7130e1d4ce767f5965.gif
+? !binary |-
+  cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY29sb3JwaWNrZXJfc3VibWl0LnBu
+  Zw==
+: rails_admin/colorpicker/colorpicker_submit-53d1ed4d442c84d7fb20c4f127432c03.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX2JhY2tncm91bmQucG5n": rails_admin/colorpicker/custom_background-a7d9267103dc495cc08db78836f5142b.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX2hleC5wbmc=": rails_admin/colorpicker/custom_hex-8bc6bc8e617bab3e11c62fc097e40937.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX2hzYl9iLnBuZw==": rails_admin/colorpicker/custom_hsb_b-df2e59baa9ba5b9144391221b11252a8.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX2hzYl9oLnBuZw==": rails_admin/colorpicker/custom_hsb_h-9a895199bcdcad713ae6729ce9cbb208.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX2hzYl9zLnBuZw==": rails_admin/colorpicker/custom_hsb_s-171dd47f406c578a1e82ced608efaffd.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX2luZGljLmdpZg==": rails_admin/colorpicker/custom_indic-65a0c54dc3dc71b411860099083cf3c8.gif
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX3JnYl9iLnBuZw==": rails_admin/colorpicker/custom_rgb_b-3b4df0a408a60228c4371cb8bd30b89d.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX3JnYl9nLnBuZw==": rails_admin/colorpicker/custom_rgb_g-c83613b593870c6a96be43897862dd45.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX3JnYl9yLnBuZw==": rails_admin/colorpicker/custom_rgb_r-8d84964bb218939c56e6b2245e1f3c63.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvY3VzdG9tX3N1Ym1pdC5wbmc=": rails_admin/colorpicker/custom_submit-cda65f7b6c7127d0ddf09771fffb030a.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvc2VsZWN0LnBuZw==": rails_admin/colorpicker/select-4ebf7b85a11ef1141db566e0709041c6.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvc2VsZWN0Mi5wbmc=": rails_admin/colorpicker/select2-9d9e18dd76e32e6c461467dae9c7c0c4.png
+!binary "cmFpbHNfYWRtaW4vY29sb3JwaWNrZXIvc2xpZGVyLnBuZw==": rails_admin/colorpicker/slider-70937b196f3b069de7e0648270cf2343.png
+!binary "cmFpbHNfYWRtaW4vbG9nby5wbmc=": rails_admin/logo-b47dc7535976aecb483aa49f1063aa2d.png
+!binary "cmFpbHNfYWRtaW4vbWFnbmlmaWVyLnBuZw==": rails_admin/magnifier-460ada5d6f6bcb33b9bdf9b0de6e826e.png
+!binary "cmFpbHNfYWRtaW4vbXVsdGlzZWxlY3QvaWNvbl9zcHJpdGUucG5n": rails_admin/multiselect/icon_sprite-3e53b827179444eb3214614963723b82.png
+? !binary |-
+  cmFpbHNfYWRtaW4vbXVsdGlzZWxlY3QvdWktaWNvbi1jaXJjbGUtdHJpYW5n
+  bGUtbi1kYXJrLnBuZw==
+: rails_admin/multiselect/ui-icon-circle-triangle-n-dark-215e8a784ac8c206ae715bb38302ed32.png
+? !binary |-
+  cmFpbHNfYWRtaW4vbXVsdGlzZWxlY3QvdWktaWNvbi1jaXJjbGUtdHJpYW5n
+  bGUtbi1saWdodC5wbmc=
+: rails_admin/multiselect/ui-icon-circle-triangle-n-light-bd5516d55e8cd5d74bf04aca1e4cf775.png
+? !binary |-
+  cmFpbHNfYWRtaW4vbXVsdGlzZWxlY3QvdWktaWNvbi1jaXJjbGUtdHJpYW5n
+  bGUtcy1kYXJrLnBuZw==
+: rails_admin/multiselect/ui-icon-circle-triangle-s-dark-a210c9d825cbaba5c76db4a1d1b6b462.png
+? !binary |-
+  cmFpbHNfYWRtaW4vbXVsdGlzZWxlY3QvdWktaWNvbi1jaXJjbGUtdHJpYW5n
+  bGUtcy1saWdodC5wbmc=
+: rails_admin/multiselect/ui-icon-circle-triangle-s-light-d45b4be88663a6713c7b895d60054cdd.png
+!binary "cmFpbHNfYWRtaW4vanF1ZXJ5LmNvbG9ycGlja2VyLmpz": rails_admin/jquery.colorpicker-443fbf18f0ea44e061d33330fc99068d.js
+!binary "cmFpbHNfYWRtaW4vcmFpbHNfYWRtaW4uanM=": rails_admin/rails_admin-9536e61a251dcbf4dd2b4805d2d0e6af.js
+!binary "cmFpbHNfYWRtaW4vYmFzZS9SRUFETUUudHh0": rails_admin/base/README-5dcda93f4443ec2561ba788c8cb44296.txt
+!binary "cmFpbHNfYWRtaW4vanF1ZXJ5LmNvbG9ycGlja2VyLmNzcw==": rails_admin/jquery.colorpicker-57ed8ab3358de6d74de97d53a6768b78.css
+!binary "cmFpbHNfYWRtaW4vcmFpbHNfYWRtaW4uY3Nz": rails_admin/rails_admin-7ed890fac67fe0b928f115e13428ad9d.css
+!binary "anF1ZXJ5LXVpL3VpLWJnX2ZsYXRfMF9hYWFhYWFfNDB4MTAwLnBuZw==": jquery-ui/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
+!binary "anF1ZXJ5LXVpL3VpLWJnX2ZsYXRfNzVfZmZmZmZmXzQweDEwMC5wbmc=": jquery-ui/ui-bg_flat_75_ffffff_40x100-841636c8f8d33987bb8d2f31e8ef92ca.png
+!binary "anF1ZXJ5LXVpL3VpLWJnX2dsYXNzXzU1X2ZiZjllZV8xeDQwMC5wbmc=": jquery-ui/ui-bg_glass_55_fbf9ee_1x400-bbb04adbe79f471d8c88a2bc691231b6.png
+!binary "anF1ZXJ5LXVpL3VpLWJnX2dsYXNzXzY1X2ZmZmZmZl8xeDQwMC5wbmc=": jquery-ui/ui-bg_glass_65_ffffff_1x400-a30aa544902182c133dbb46ac40a08d2.png
+!binary "anF1ZXJ5LXVpL3VpLWJnX2dsYXNzXzc1X2RhZGFkYV8xeDQwMC5wbmc=": jquery-ui/ui-bg_glass_75_dadada_1x400-38ed9f33e066d6bee977c567d4b03650.png
+!binary "anF1ZXJ5LXVpL3VpLWJnX2dsYXNzXzc1X2U2ZTZlNl8xeDQwMC5wbmc=": jquery-ui/ui-bg_glass_75_e6e6e6_1x400-3e20bce1b7b2f5dd47ca6ac361805162.png
+!binary "anF1ZXJ5LXVpL3VpLWJnX2dsYXNzXzk1X2ZlZjFlY18xeDQwMC5wbmc=": jquery-ui/ui-bg_glass_95_fef1ec_1x400-c723e9a2b50006c6054836a10b76bb84.png
+? !binary |-
+  anF1ZXJ5LXVpL3VpLWJnX2hpZ2hsaWdodC1zb2Z0Xzc1X2NjY2NjY18xeDEw
+  MC5wbmc=
+: jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100-081f36ef02c9233c6db45d2d566fbecd.png
+!binary "anF1ZXJ5LXVpL3VpLWljb25zXzIyMjIyMl8yNTZ4MjQwLnBuZw==": jquery-ui/ui-icons_222222_256x240-1bca65a97a49d7d05ab2f3dc83b97cd5.png
+!binary "anF1ZXJ5LXVpL3VpLWljb25zXzJlODNmZl8yNTZ4MjQwLnBuZw==": jquery-ui/ui-icons_2e83ff_256x240-efb394f4417cc6bd4177a1999474e1eb.png
+!binary "anF1ZXJ5LXVpL3VpLWljb25zXzQ1NDU0NV8yNTZ4MjQwLnBuZw==": jquery-ui/ui-icons_454545_256x240-17e6740beb176dd87da44be76c94bb47.png
+!binary "anF1ZXJ5LXVpL3VpLWljb25zXzg4ODg4OF8yNTZ4MjQwLnBuZw==": jquery-ui/ui-icons_888888_256x240-5b928d6b862809eb8130d7b7e0b51a1d.png
+!binary "anF1ZXJ5LXVpL3VpLWljb25zX2NkMGEwYV8yNTZ4MjQwLnBuZw==": jquery-ui/ui-icons_cd0a0a_256x240-635d34cf8bf22d711a729017ab9aaebe.png
+!binary "Rm9udEF3ZXNvbWUub3Rm": FontAwesome-07ef65cef9337906acb1706e338a1af2.otf
+!binary "Zm9udGF3ZXNvbWUtd2ViZm9udC5lb3Q=": fontawesome-webfont-77e1d850f2d1e5ac753cdf3454949543.eot
+!binary "Zm9udGF3ZXNvbWUtd2ViZm9udC50dGY=": fontawesome-webfont-bfb261547b1311ffef80aa06ba5cddfc.ttf
+!binary "Zm9udGF3ZXNvbWUtd2ViZm9udC53b2Zm": fontawesome-webfont-ee254ab81e26c3eb79566a682d48a252.woff
