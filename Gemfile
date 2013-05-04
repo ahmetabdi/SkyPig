@@ -16,6 +16,8 @@ group :test, :development do
   gem "rspec-rails"
 end
 
+#Rails admin
+gem 'rails_admin'
 #Movie DB API Gem created by ME
 gem 'themoviedb'
 #https://github.com/intelekshual/giantbomb

@@ -1,5 +1,7 @@
 SkyPig::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   devise_for :users
   resources :users
   #movieapi
@@ -8,6 +10,7 @@ SkyPig::Application.routes.draw do
   resources :person
   resources :company
   resources :games
+  resources :discussions
 
   devise_for :users, :controllers => {:sessions => 'devise/sessions', :registrations => 'devise/registrations', :passwords => 'devise/passwords'}, :skip => [:sessions] do
     get '/login' => 'devise/sessions#new', :as => :new_user_session

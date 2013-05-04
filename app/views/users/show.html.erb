@@ -15,11 +15,8 @@
 		<b>Last seen:</b>
 		<% if @user.last_sign_in_at.nil? %>Never
 		<% else %><%= @user.last_sign_in_at.strftime("%B %d, %Y at %I:%M%p") %><% end %><br />
-		<p>
-    		<a class="btn btn-primary btn-large">
-				Edit Information
-			</a>
-		</p>
+
+		<%= link_to "Change your password", edit_user_registration_path %>
 
 		<h2>Your Active Wiki Pages</h2>
 		<% @pages = Stiki::Author.all %>

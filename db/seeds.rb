@@ -17,9 +17,9 @@ User.create!( :username => "admin",
               :password_confirmation => "skypig")
 #Normal User
 User.create!( :username => "ahmet_test", 
-              :email => "test@skypig.com",
-              :password => "tester1",
-              :password_confirmation => "tester1")
+              :email => "ahmet@skypig.com",
+              :password => "google555",
+              :password_confirmation => "google555")
 
 #Stiki wiki Population
 Stiki::Space.create!(	:name => "Movies",

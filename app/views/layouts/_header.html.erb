@@ -3,10 +3,13 @@
 		<div class="navbar to-the-right">
 			<div class="navbar-inner">
 				<ul class="nav">
+					<% if current_user.email == 'admin@skypig.com' %>
+						<li><%= link_to "Admin", '/admin' %></li>
+						<li class="divider-vertical"></li>
+					<% end %>
 					<li><%= link_to "My Account", user_path(current_user) %></li>
-  					<li class="divider-vertical"></li>
-  					<li><%= link_to "Logout", '/logout' %></li>
-					<li>
+  				<li class="divider-vertical"></li>
+  				<li><%= link_to "Logout", '/logout' %></li>
   			</ul>
   		</div>
 		</div>
@@ -15,8 +18,8 @@
 			<div class="navbar-inner">
 				<ul class="nav">
 					<li><%= link_to "Register", '/register' %></li>
-  					<li class="divider-vertical"></li>
-  					<li><%= link_to "Login", '/login' %></li>
+  				<li class="divider-vertical"></li>
+  				<li><%= link_to "Login", '/login' %></li>
   			</ul>
   		</div>
 		</div>
@@ -38,7 +41,7 @@
             	<% end %>
           	</ul>
           </li>
-					<li><a href="#">Discussions</a></li>
+					<li><%= link_to 'Discussions', discussions_path %></li>
 					<li><%= link_to 'Users', users_path %></li>
 				</ul>
 					<%= form_tag("/search", :class => 'navbar-form to-the-right',:method => "get") do %>
