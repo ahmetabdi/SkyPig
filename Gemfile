@@ -16,6 +16,7 @@ group :test, :development do
   gem "rspec-rails"
 end
 
+gem 'faker'
 #Rails admin
 gem 'rails_admin'
 #Movie DB API Gem created by ME
