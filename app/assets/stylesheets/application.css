@@ -25,6 +25,7 @@
 iframe {
     margin: 0px !important;
     padding: 0px !important;
+    background: 0;
     border: 0px !important;
 }
 
