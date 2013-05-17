@@ -1,1 +1,10 @@
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Creating scope :page. Overwriting existing method Stiki::Author.page.
+Creating scope :page. Overwriting existing method Stiki::Page.page.
+Creating scope :page. Overwriting existing method Stiki::Space.page.
+Connecting to database specified by database.yml
+Creating scope :page. Overwriting existing method Stiki::Author.page.
+Creating scope :page. Overwriting existing method Stiki::Page.page.
+Creating scope :page. Overwriting existing method Stiki::Space.page.
+Creating scope :page. Overwriting existing method Author.page.

@@ -59,7 +59,8 @@ Stiki::Page.create!(	:title => "Iron Man 3",
 
 Stiki::Page.create!(	:title => "Mario Brothers",
 						:slug => "mario-brothers",
-						:body => "<p>Mario Brothers</p>",
+						:body => "<p>New Super Mario Bros. U is a Wii U game developed and published by Nintendo. It was released on November 18, 2012. It is the fourth game in the New Super Mario Bros. franchise and nearly the 200th game with a direct relation to the Mario franchise.
+New Super Mario Bros. U was revealed initially as New Super Mario Bros. Mii, a demo experience during the unveiling of the Wii U at E3 2011 and was never confirmed to be an actual game. Later in the year, Nintendo announced that it was indeed a full title that would be shown again at E3 2012 as the new Mario game for the Wii U.</p>",
 						:parent_id => nil,
 						:space_id => "2")
 
@@ -69,17 +70,71 @@ Stiki::Page.create!(	:title => "Week 1",
 						:parent_id => nil,
 						:space_id => "3")
 
-Stiki::Author.create!(	:user_id => "2",
-						:authorable_id => "1",
-						:authorable_type => "Stiki::Page",
-						:creator => "true")
+Stiki::Page.create!(	:title => "Week 2",
+						:slug => "week-2",
+						:body => "<p>Week 2 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
 
-Stiki::Author.create!(	:user_id => "2",
-						:authorable_id => "2",
-						:authorable_type => "Stiki::Page",
-						:creator => "true")
+Stiki::Page.create!(	:title => "Week 3",
+						:slug => "week-3",
+						:body => "<p>Week 3 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
 
+Stiki::Page.create!(	:title => "Week 4",
+						:slug => "week-4",
+						:body => "<p>Week 4 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+Stiki::Page.create!(	:title => "Week 5",
+						:slug => "week-5",
+						:body => "<p>Week 5 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+Stiki::Page.create!(	:title => "Week 6",
+						:slug => "week-6",
+						:body => "<p>Week 6 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+Stiki::Page.create!(	:title => "Week 7",
+						:slug => "week-7",
+						:body => "<p>Week 7 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+Stiki::Page.create!(	:title => "Week 9",
+						:slug => "week-9",
+						:body => "<p>Week 9 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+Stiki::Page.create!(	:title => "Week 10",
+						:slug => "week-10",
+						:body => "<p>Week 10 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+Stiki::Page.create!(	:title => "Week 11",
+						:slug => "week-11",
+						:body => "<p>Week 11 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+Stiki::Page.create!(	:title => "Week 12",
+						:slug => "week-12",
+						:body => "<p>Week 12 teaching Information</p>",
+						:parent_id => nil,
+						:space_id => "3")
+
+
+20.times do |i|
 Stiki::Author.create!(	:user_id => "2",
-						:authorable_id => "3",
+						:authorable_id => i,
 						:authorable_type => "Stiki::Page",
 						:creator => "true")
+end
+

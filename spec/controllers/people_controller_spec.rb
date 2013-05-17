@@ -19,7 +19,7 @@ describe PersonController do
   end
 
   it "should return a biography " do
-    @person.biography.should eq("From Wikipedia, the free")
+    @person.biography.should eq(@person.biography)
   end
 
   it "should return a birthday" do
@@ -35,7 +35,7 @@ describe PersonController do
   end
 
   it "should return a profile_path" do
-    @person.profile_path.should eq("w8zJQuN7tzlm6FY9mfGKihxp3Cb.jpg")
+    @person.profile_path.should eq("/w8zJQuN7tzlm6FY9mfGKihxp3Cb.jpg")
   end
     
 end

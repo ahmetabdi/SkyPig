@@ -18,7 +18,7 @@
 									<% unless movie.poster_path %><img src="http://placehold.it/154x154"><% end %>
 								</td>
 								<td>
-									<%= link_to movie.title, movie_path(movie.id) %> (<%= movie.release_date.to_date.strftime("%Y") if movie.release_date %><% unless movie.release_date %>No Date Available<% end %>) <br />
+									<%= link_to movie.title, movie_path(movie.id) %> (<%= movie.release_date.to_date if movie.release_date %><% unless movie.release_date %>No Date Available<% end %>) <br />
 									Directors: <% Tmdb::Movie.crew(movie.id).each do |crew| %> <% if crew['department'] == 'Directing' %> <%= link_to crew['name'], person_path(crew['id']) %> <% end %><% end %><br />
 									Starring: <% Tmdb::Movie.casts(movie.id).first(3).each do |cast| %> <%= link_to cast['name'], person_path(cast['id']) %> | <% end %><br />
 								</td>
